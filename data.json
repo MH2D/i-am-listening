@@ -2,11 +2,11 @@
     "items": [
       {
         "photo": "banban.jpg",
-        "song": "/i-am-listening/musique_portrait/54-46 Was My Number.mp3"
+        "song": "musique_portrait/54-46 Was My Number.mp3"
       },
       {
         "photo": "felix.jpg",
-        "song": "i-am-listening/musique_portrait/Nasty Girl (feat. Diddy, Nelly, Jagged Edge & Avery Storm) - 2005 Remaster.mp3"
+        "song": "musique_portrait/Nasty Girl (feat. Diddy, Nelly, Jagged Edge & Avery Storm) - 2005 Remaster.mp3"
       },
       {
         "photo": "guillaume.jpg",
@@ -18,11 +18,11 @@
       },
       {
         "photo": "Oleg.jpg",
-        "song": "/i-am-listening/musique_portrait/Rain.mp3"
+        "song": "musique_portrait/Rain.mp3"
       },
       {
         "photo": "Nourrdin.jpg",
-        "song": "/i-am-listening/musique_portrait/Fadma.mp3"
+        "song": "/musique_portrait/Fadma.mp3"
       },
       {
         "photo": "Chakib.jpg",
