@@ -1,7 +1,7 @@
 const gallery = document.getElementById('gallery');
 const audioPlayer = document.getElementById('audioPlayer');
 
-fetch('data.json')
+fetch('i-am-listening/data.json')
     .then(response => response.json())
     .then(data => {
         data.items.forEach((item, index) => {
