@@ -7,7 +7,7 @@ fetch('data.json')
         data.items.forEach((item, index) => {
             const photoElement = document.createElement('div');
             photoElement.className = 'photo';
-            photoElement.innerHTML = `<img src="portraits/${item.photo}" alt="Photo ${index + 1}" onclick="playSong('/musique_portrait/${item.song}')">`;
+            photoElement.innerHTML = `<img src="portraits/${item.photo}" alt="Photo ${index + 1}" onclick="playSong('musique_portrait/${item.song}')">`;
             gallery.appendChild(photoElement);
         });
     })
