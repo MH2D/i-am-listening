@@ -119,6 +119,14 @@
       {
         "photo": "Mehdi.jpg",
         "song": "musique_portrait/Is This Love Bob Marley The Wailers.mp3"
+      },
+      {
+        "photo": "marin.jpg",
+        "song": "musique_portrait/GTB.mp3"
+      },
+      {
+        "photo": "axel.jpg",
+        "song": "musique_portrait/QQTR ?.mp3"
       }
     ]
   }
