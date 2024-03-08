@@ -1,6 +1,3 @@
-const gallery = document.getElementById('gallery');
-const audioPlayer = document.getElementById('audioPlayer');
-
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
