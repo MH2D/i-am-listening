@@ -7,6 +7,38 @@ body {
     min-height: 100vh;
 }
 
+header {
+    background-color: #f2f2f200;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+}
+
+header a {
+    display: block;
+    width: 80px; /* Increased width */
+    height: 80px; /* Increased height */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 70%; /* Make the button round */
+}
+
+#instagramButton {
+    background-image: url('instagram_logo.png'); /* Replace with path to your Instagram logo image */
+    margin-right: 20px; /* Add margin to separate buttons */
+}
+
+#spotifyButton {
+    background-image: url('spotify-playlist.jpg'); /* Replace with path to your Spotify logo image */
+}
+
+h1 {
+    margin: 0;
+}
+
 #gallery {
     display: flex;
     flex-wrap: wrap;
