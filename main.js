@@ -1,6 +1,38 @@
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
+        // Add Instagram link photo element
+        const instagramPhotoElement = document.createElement('div');
+        instagramPhotoElement.className = 'photo';
+        
+        const instagramImgElement = document.createElement('img');
+        instagramImgElement.src = 'instagram_logo.png'; // Replace 'instagram_logo.png' with the path to your Instagram logo image
+        instagramImgElement.alt = 'Instagram';
+
+        instagramImgElement.addEventListener('click', () => {
+            // Redirect to your Instagram account
+            window.location.href = 'https://www.instagram.com/mhdeuxdphotos/';
+        });
+
+        instagramPhotoElement.appendChild(instagramImgElement);
+        gallery.appendChild(instagramPhotoElement);
+
+        // Add Spotify link photo element
+        const spotifyPhotoElement = document.createElement('div');
+        spotifyPhotoElement.className = 'photo';
+        
+        const spotifyImgElement = document.createElement('img');
+        spotifyImgElement.src = 'spotify-playlist.jpg'; // Replace 'spotify_logo.png' with the path to your Spotify logo image
+        spotifyImgElement.alt = 'Spotify';
+
+        spotifyImgElement.addEventListener('click', () => {
+            // Redirect to your Spotify account or playlist
+            window.location.href = 'https://open.spotify.com/playlist/44r0zLfRBNJaQTBqnOx2sv?si=32e94f79f049482a';
+        });
+
+        spotifyPhotoElement.appendChild(spotifyImgElement);
+        gallery.appendChild(spotifyPhotoElement);
+        
         let lastClickedPhoto; // Variable to store the last clicked photo
 
         data.items.forEach((item, index) => {
