@@ -19,6 +19,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I am Listening</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #welcomeWidget {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            padding: 32px;
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
+            border: 2px solid #ddd;
+            border-radius: 16px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            z-index: 1000;
+        }
+
+        #welcomeWidget button {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #f05454;
+            color: white;
+            border: none;
+            font-size: 20px;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #welcomeWidget h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        #welcomeWidget p {
+            margin-top: 16px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        #blurBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+        }
+
+        #welcomeWidget button:hover {
+            background: #d93a3a;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,12 +93,34 @@
     <input type="range" id="progressBar" value="0" step="1" style="flex-grow: 1;" onchange="seekAudio()">
     <span id="duration"> 0:00 </span>
 </div>
+
+<!-- Widget code starts here -->
+<div id="blurBackground"></div>
+<div id="welcomeWidget">
+    <button onclick="closeWidget()">&times;</button>
+    <h3>I am listening</h3>
+    <p>
+        During a trip in Morocco, I met people and asked them to answer:
+        <b>What would be a music you'd like me to listen to?</b>
+    </p>
+    <p>
+        I then took a picture of that moment, and here you are. 
+        Click on a portrait to listen to the human diversity.
+        No name, no title, no word. Just a face and a music. 
+    </p>
+</div>
+<script>
+    function closeWidget() {
+        const widget = document.getElementById('welcomeWidget');
+        const blurBackground = document.getElementById('blurBackground');
+        if (widget) widget.style.display = 'none';
+        if (blurBackground) blurBackground.style.display = 'none';
+    }
+</script>
+<!-- Widget code ends here -->
+
 <script src="main.js"></script>
 
 
 </body>
 </html>
-
-
-
-
