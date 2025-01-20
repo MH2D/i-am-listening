@@ -119,3 +119,33 @@ body {
 #progressBar::-webkit-slider-thumb {
     background-color: #bd2323;
 }
+
+
+.audio-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.audio-container h4 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.play-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #0056b3;
+}

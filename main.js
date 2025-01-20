@@ -8,7 +8,7 @@ fetch('data.json')
             photoElement.className = 'photo';
 
             const imgElement = document.createElement('img');
-            imgElement.src = `portraits/${item.photo}`;
+            imgElement.src = `./i-am-listening/portraits/${item.photo}`;
             imgElement.alt = `Photo ${index + 1}`;
 
             imgElement.addEventListener('click', () => {

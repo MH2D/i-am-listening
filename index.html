@@ -7,7 +7,10 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FC9ZJRCHDV"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FC9ZJRCHDV">
+
+</script><script src="https://unpkg.com/wavesurfer.js"></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -89,12 +92,8 @@
     </header>
 
 <div id="gallery"></div>
+<div id="audioManager"></div>
 <audio id="audioPlayer" controls></audio>
-<div id="musicControls"> 
-    <span id="currentTime"> 0:00 </span>
-    <input type="range" id="progressBar" value="0" step="1" style="flex-grow: 1;" onchange="seekAudio()">
-    <span id="duration"> 0:00 </span>
-</div>
 
 <!-- Widget code starts here -->
 <div id="blurBackground"></div>
