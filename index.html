@@ -1,128 +1,143 @@
-</body>
-</html>
-
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FC9ZJRCHDV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FC9ZJRCHDV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-FC9ZJRCHDV');
+  </script>
 
-  gtag('config', 'G-FC9ZJRCHDV');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I am Listening</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        #welcomeWidget {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70%;
-            max-width: 600px;
-            padding: 32px;
-            background: linear-gradient(135deg, #ffffff, #f9f9f9);
-            border: 2px solid #ddd;
-            border-radius: 16px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-            z-index: 1000;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I am listening — portraits & music from Morocco</title>
+  <meta name="description"
+    content="A photo-and-sound project. Portraits of people met during a trip in Morocco, each paired with a song they wanted to share." />
 
-        #welcomeWidget button {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: #f05454;
-            color: white;
-            border: none;
-            font-size: 20px;
-            border-radius: 50%;
-            width: auto;
-            padding: 8px 12px;
-            cursor: pointer;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            white-space: nowrap;
-        }
+  <!-- Open Graph / social sharing -->
+  <meta property="og:title" content="I am listening" />
+  <meta property="og:description"
+    content="Portraits of people met in Morocco, each paired with the music they wanted me to hear. A face and a song." />
+  <meta property="og:type" content="website" />
 
-        #welcomeWidget h3 {
-            margin: 0;
-            font-size: 24px;
-            color: #333;
-        }
-
-        #welcomeWidget p {
-            margin-top: 16px;
-            font-size: 16px;
-            color: #666;
-        }
-
-        #blurBackground {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
-            z-index: 999;
-        }
-
-        #welcomeWidget button:hover {
-            background: #d93a3a;
-        }
-    </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header>
-        <a id="instagramButton" href="https://www.instagram.com/mh2dphoto/" target="_blank"></a>
-        <a id="spotifyButton" href="https://open.spotify.com/playlist/44r0zLfRBNJaQTBqnOx2sv?si=32e94f79f049482a" target="_blank"></a>
-    </header>
+  <!-- Atmosphere: gallery lighting + film grain (decorative) -->
+  <div class="atmosphere" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-<div id="gallery"></div>
-<audio id="audioPlayer" controls></audio>
-<div id="musicControls"> 
-    <span id="currentTime"> 0:00 </span>
-    <input type="range" id="progressBar" value="0" step="1" style="flex-grow: 1;" onchange="seekAudio()">
-    <span id="duration"> 0:00 </span>
-</div>
+  <!-- Entrance placard -->
+  <div id="intro" class="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle">
+    <div class="intro__card">
+      <!-- <p class="kicker">Morocco</p> -->
+      <h1 id="introTitle" class="intro__title">I am listening</h1>
+      <p class="intro__lead">
+        During a trip across Morocco, I met people and asked them what song they would like to share.
+      </p>
+      <p class="intro__body">
+        I took a picture of that moment. Click on a portrait to see them and hear their song.
+      </p>
+      <button id="enterBtn" class="btn-enter" type="button">Enter the gallery</button>
+    </div>
+  </div>
 
-<!-- Widget code starts here -->
-<div id="blurBackground"></div>
-<div id="welcomeWidget">
-    <button onclick="closeWidget()">&times;</button>
-    <h3>I am listening</h3>
-    <p>
-        During a trip in Morocco, I met people and asked them to answer:
-        <b>What would be a music you'd like me to listen to?</b>
-    </p>
-    <p>
-        I then took a picture of that moment, and here you are. 
-        Click on a portrait to listen to the human diversity.
-        No name, no title, no word. Just a face and a music. 
-    </p>
-</div>
-<script>
-    function closeWidget() {
-        const widget = document.getElementById('welcomeWidget');
-        const blurBackground = document.getElementById('blurBackground');
-        if (widget) widget.style.display = 'none';
-        if (blurBackground) blurBackground.style.display = 'none';
-    }
-</script>
-<!-- Widget code ends here -->
+  <!-- Header -->
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a class="brand" href="#" aria-label="I am listening — back to top">
+        <!-- <span class="brand__kicker">Morocco</span> -->
+        <span class="brand__title">I am listening</span>
+      </a>
+      <nav class="links" aria-label="Elsewhere">
+        <button id="aboutBtn" class="iconlink" type="button" aria-label="About this project" title="About">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="9.5" />
+            <line x1="12" y1="11" x2="12" y2="16.5" />
+            <circle cx="12" cy="7.5" r="0.9" fill="currentColor" stroke="none" />
+          </svg>
+        </button>
+        <a class="iconlink" href="https://www.instagram.com/mh2dphoto/" target="_blank" rel="noopener"
+          aria-label="Instagram — mh2dphoto" title="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4"
+            aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a class="iconlink" href="https://open.spotify.com/playlist/44r0zLfRBNJaQTBqnOx2sv?si=32e94f79f049482a"
+          target="_blank" rel="noopener" aria-label="Listen to the full playlist on Spotify" title="Spotify playlist">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="9.5" />
+            <path d="M7 9.3c3.2-0.9 6.8-0.6 9.6 1" />
+            <path d="M7.6 12.4c2.6-0.7 5.6-0.5 7.9 0.9" />
+            <path d="M8.2 15.3c2-0.5 4.3-0.4 6.1 0.7" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
 
-<script src="main.js"></script>
+  <main>
+    <!-- Gallery is rendered here -->
+    <section id="gallery" class="gallery" aria-label="Portraits" aria-busy="true"></section>
+  </main>
 
+  <footer class="colophon">
+    <p>Photographs &amp; project by <a href="https://www.instagram.com/mh2dphoto/" target="_blank"
+        rel="noopener">MH2D</a>. Click any face to listen.</p>
+  </footer>
 
+  <!-- Enlarged portrait -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxName" hidden>
+    <button id="lightboxClose" class="lightbox__close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"
+        aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18" />
+        <line x1="18" y1="6" x2="6" y2="18" />
+      </svg>
+    </button>
+    <figure class="lightbox__figure">
+      <img id="lightboxImg" class="lightbox__img" alt="" />
+      <figcaption id="lightboxName" class="lightbox__name"></figcaption>
+    </figure>
+  </div>
+
+  <!-- Audio player (revealed on first play) -->
+  <audio id="audioPlayer" preload="metadata"></audio>
+  <div id="player" class="player" hidden>
+    <div class="player__inner">
+      <div class="player__now">
+        <img id="nowThumb" class="player__thumb" alt="" />
+        <span class="player__eq" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+
+      <button id="playToggle" class="player__btn" type="button" aria-label="Pause">
+        <svg class="icon-pause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+          <rect x="6" y="5" width="4" height="14" rx="1" />
+          <rect x="14" y="5" width="4" height="14" rx="1" />
+        </svg>
+        <svg class="icon-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+          <path d="M8 5.5v13l11-6.5z" />
+        </svg>
+      </button>
+
+      <time id="currentTime" class="player__time">0:00</time>
+      <input id="progressBar" class="player__seek" type="range" min="0" max="100" value="0" step="0.1"
+        aria-label="Seek" />
+      <time id="duration" class="player__time">0:00</time>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
